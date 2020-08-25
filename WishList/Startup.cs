@@ -25,9 +25,14 @@ namespace WishList
         {
             if (env.IsDevelopment())
             {
-                app.UseRouting();
-                app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
+                app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler();
+            }
+            app.UseRouting();
+            app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
         }
     }
 }
